@@ -77,7 +77,10 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'HOST': os.enviton.get('DB_HOST'),
+        'NAME': os.enviton.get('DB_NAME'),
+        'USER': os.enviton.get('DB_USER'),
+        'PASSWORD': os.enviton.get('DB_PASS'),
     }
 }
 
